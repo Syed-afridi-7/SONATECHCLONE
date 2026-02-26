@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback } from "react";
-import { Link } from "react-router-dom";
 import heroCampus from "@/assets/hero-campus.jpg";
 
 const slides = [
@@ -66,10 +65,10 @@ const HeroSection = () => {
 
                 <div className="flex flex-wrap gap-4 animate-fade-in-up">
                   <Button asChild size="lg" className="bg-gold-gradient text-secondary-foreground font-semibold font-body hover:opacity-90 transition-all shadow-xl scale-100 hover:scale-105">
-                    <Link to="/admissions">
+                    <a href="https://www.sonatech.ac.in/admission/" target="_blank" rel="noopener noreferrer">
                       <GraduationCap className="w-5 h-5 mr-2" />
                       Apply for Admission
-                    </Link>
+                    </a>
                   </Button>
                   <Button
                     asChild
