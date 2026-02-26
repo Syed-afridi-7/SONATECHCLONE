@@ -13,10 +13,12 @@ import VirtualTourCTA from "@/components/VirtualTourCTA";
 import SonaStorySection from "@/components/SonaStorySection";
 import EminentVisitorsSection from "@/components/EminentVisitorsSection";
 import Footer from "@/components/Footer";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgressBar />
       <Navbar />
       <main>
         <HeroSection />

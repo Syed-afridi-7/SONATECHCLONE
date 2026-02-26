@@ -1,33 +1,40 @@
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import sonaLogo from "@/assets/sona-logo.png";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
-  Admissions: [
-    "Admissions 2025-26",
+  ADMISSIONS: [
+    "Admission 2024-25",
     "International Admissions",
-    "Placement",
-    "Scholarship",
+    "Scholarships",
     "Engineering Courses",
+    "MBA Admissions",
   ],
-  Accreditation: [
+  ACCREDITATION: [
     "A++ Grade by NAAC",
-    "IQAC",
-    "NBA Accredited Programmes",
-    "AICTE Mandatory Disclosure",
-  ],
-  Students: [
-    "Student Affairs",
-    "Anti Ragging",
-    "Student Life",
-    "Grievance Redressal",
-    "Downloads",
-  ],
-  "Quick Links": [
-    "Rankings",
-    "Awards",
-    "Research",
-    "Press Room",
+    "NBA Accredited",
     "NIRF",
+    "ARIIA",
+    "AISHE",
+  ],
+  STUDENTS: [
+    "Student Affairs",
+    "Grievance Redressal",
+    "Scholarship Info",
+    "Anti-Ragging",
+    "Student Clubs",
+  ],
+  FACULTY: [
+    "Faculty Information",
+    "Research & Publications",
+    "Faculty Development",
+  ],
+  "OTHER LINKS": [
+    "Alumni",
+    "Library",
+    "Sports",
+    "Sitemap",
+    "Privacy Policy",
   ],
 };
 
@@ -64,29 +71,39 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Link columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="font-display font-semibold text-sm mb-4 text-gold">{title}</h4>
-              <ul className="space-y-2">
+              <h4 className="font-display font-semibold text-[13px] mb-6 text-gold uppercase tracking-wider">{title}</h4>
+              <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-primary-foreground/60 hover:text-gold text-xs font-body transition-colors">
+                    <Link to="#" className="text-primary-foreground/60 hover:text-gold text-xs font-body transition-colors block">
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
+
+          {/* Social */}
+          <div>
+            <h4 className="font-display font-semibold text-[13px] mb-6 text-gold uppercase tracking-wider">SOCIAL CONNECT</h4>
+            <div className="flex flex-wrap gap-3">
+              {[Facebook, Twitter, Instagram, Linkedin, Youtube].map((Icon, i) => (
+                <a key={i} href="#" className="bg-primary-foreground/10 p-2 rounded-full hover:bg-gold hover:text-primary transition-all duration-300">
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Bottom bar */}
       <div className="border-t border-primary-foreground/10">
-        <div className="container py-4 flex flex-col sm:flex-row items-center justify-between text-xs text-primary-foreground/40 font-body">
+        <div className="container py-6 flex flex-col items-center justify-center text-center text-xs text-primary-foreground/40 font-body">
           <p>© 2026 Sona College of Technology. All rights reserved.</p>
-          <p>Designed with ❤️ for excellence in education</p>
         </div>
       </div>
     </footer>

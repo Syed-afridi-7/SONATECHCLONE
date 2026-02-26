@@ -36,13 +36,17 @@ const DepartmentsSection = () => {
             <a
               href="#"
               key={dept.code}
-              className="bg-card border border-border rounded-xl p-5 hover:shadow-lg hover:border-gold/50 hover:-translate-y-1 transition-all duration-300 group text-center"
+              className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-2xl hover:border-gold/30 hover:-translate-y-2 hover:bg-navy-gradient transition-all duration-500 group text-center relative overflow-hidden"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-gold/20 transition-colors">
-                <dept.icon className="w-6 h-6 text-primary group-hover:text-gold transition-colors" />
+              <div className="absolute -right-4 -top-4 w-20 h-20 bg-gold/5 rounded-full group-hover:scale-150 transition-transform duration-700 pointer-events-none" />
+
+              <div className="relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-navy-light/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-white/10 transition-colors duration-300">
+                  <dept.icon className="w-7 h-7 text-navy-dark group-hover:text-gold transition-colors duration-300" />
+                </div>
+                <p className="text-sm font-display font-bold text-navy-dark group-hover:text-white leading-snug mb-1 transition-colors duration-300">{dept.name}</p>
+                <span className="text-[11px] font-body font-bold text-navy-light/70 group-hover:text-gold/80 transition-colors duration-300">{dept.code}</span>
               </div>
-              <p className="text-xs font-body text-muted-foreground leading-snug mb-1">{dept.name}</p>
-              <span className="text-[10px] font-body font-bold text-primary/60">{dept.code}</span>
             </a>
           ))}
         </div>
