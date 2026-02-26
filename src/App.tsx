@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import Placement from "./pages/Placement";
 import Departments from "./pages/Departments";
 import Playground from "./pages/Playground";
+import { LoadingScreen } from "./components/LoadingScreen";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <LoadingScreen />
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Routes>
           <Route path="/" element={<Index />} />
